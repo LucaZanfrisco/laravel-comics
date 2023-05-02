@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
+    // dati passati alla view
     $data = [
+        // Dati nav-bar
         'nav' => [
             'CHARACTERS',
             'COMICS',
@@ -28,7 +29,9 @@ Route::get('/', function () {
             'NEWS',
             'SHOP'
         ],
+        // Dati riguardanti i fumetti
         'comics' => config('db'),
+        // Dati della nav del footer top
         'footerTop' => [
                 [
                     'image' => 'resources/img/buy-comics-digital-comics.png',
@@ -51,6 +54,29 @@ Route::get('/', function () {
                     'name' =>  'DC POWER VISA' 
                 ]
             ],
+        // Dati dei social
+        'social' => [
+            [
+                'image' => 'resources/img/footer-facebook.png',
+                'name' => 'facebook'  
+            ],
+            [
+                'image' => 'resources/img/footer-twitter.png',
+                'name' => 'twitter'  
+            ],
+            [
+                'image' => 'resources/img/footer-youtube.png',
+                'name' => 'youtube'  
+            ],
+            [
+                'image' => 'resources/img/footer-pinterest.png',
+                'name' => 'pinterest'  
+            ],
+            [
+                'image' => 'resources/img/footer-periscope.png',
+                'name' => 'periscope'  
+            ],
+        ]
         ];
     return view('home', $data);
-});
+})->name('Homepage');

@@ -86,7 +86,57 @@ main{
     font-size: .8125rem;
     .shop{
         max-width: 3.4375rem;
-        margin-right: .9375rem;
-        
+        margin-right: .9375rem;  
+    }
+}
+.footer-mid{
+    height: 25rem;
+    background-image: url(../img/footer-bg.jpg);
+    .container-jumbo{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        height: 100%;
+        .container-info{
+            display: flex;
+            ul{
+                margin-right: 17px;
+                margin-bottom: 15px;
+                list-style: none;
+                li{
+                    font-size: 14px;
+                    padding: .125rem;
+                    color: #959595;
+                    &:hover{
+                        cursor: pointer;
+                        text-decoration: .125rem underline;
+                    }
+                    h3{
+                        margin-bottom: 1.25rem;
+                        font-size: medium;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+.footer-bot{
+    height: 6.875rem;
+    background-color: #303030;
+    button{
+        border: .0625rem solid #0282f9;
+        padding: 1rem;
+        background-color: transparent;
+        color: white;
+        font-weight: bold;
+    }
+    li{
+        padding: .625rem;
+    }
+    .follow{
+        color: #0282f9;
+        font-size: x-large;
     }
 }
