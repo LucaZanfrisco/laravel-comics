@@ -1,0 +1,49 @@
+// MAIN
+
+// HOMEPAGE
+main{
+    background-color: #1c1c1c;
+    padding-bottom: 1.25rem;
+    color: white;
+    li{
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .current{
+        background-color: #0282f9;
+        display: inline-block;
+        padding: 1.0625rem 1.875rem;
+        font-size: 1.4rem;
+        position: relative;
+        bottom: 1.6875rem;
+    }
+    .more{
+        text-align: center;
+    }
+    .more-load {
+        text-align: center;
+        border: none;
+        padding: 12px 55px;
+        font-weight: bold;
+        color: inherit;
+        &:hover{
+            cursor: pointer;
+            scale: 1.1;
+        }
+    }
+}
+// --------
+
+// NEWS 
+.news{
+    .news-title{
+        background-color: #0282f9;
+        border-radius: .3125rem;
+        text-align: center;
+        padding: 10px;
+    }
+    li{
+        font-size: 1.375rem
+    }
+}

@@ -9,7 +9,7 @@
     <main>
         <div class="container">
             <div>
-                <h3>CURRENT SERIES</h3>
+                <h3 class="current">CURRENT SERIES</h3>
             </div>
             <ul class="row row-cols-6 list-unstyled m-2 mb-5 pt-2">
                 @foreach ($comics as $comic)
