@@ -27,7 +27,30 @@ Route::get('/', function () {
             'FANS',
             'NEWS',
             'SHOP'
-        ]
+        ],
+        'comics' => config('db'),
+        'footerTop' => [
+                [
+                    'image' => 'resources/img/buy-comics-digital-comics.png',
+                    'name' => 'DIGITAL COMICS'  
+                ],
+                [
+                    'image' => 'resources/img//buy-comics-merchandise.png',
+                    'name' => 'DC MERCHANDISE' 
+                ],
+                [
+                    'image' => 'resources/img/buy-comics-subscriptions.png',
+                    'name' => 'SUBSCRIPTION'  
+                ],
+                [
+                    'image' => 'resources/img/buy-comics-shop-locator.png',
+                    'name' => 'COMIC SHOP LOCATOR'
+                ],
+                [
+                    'image' => 'resources/img/buy-dc-power-visa.svg',
+                    'name' =>  'DC POWER VISA' 
+                ]
+            ],
         ];
     return view('home', $data);
 });

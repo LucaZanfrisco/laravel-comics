@@ -1,9 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
-
+// Common 
 a{
     text-decoration: none;
     color: black;
 }
+// HEADER
 header{
     background-color: #0282f9;
 }
@@ -40,4 +41,52 @@ nav{
     height: 25rem;
     background-image: url(../img/jumbotron.jpg);
     background-size: cover;
+}
+// ----------
+
+// MAIN
+main{
+    background-color: #1c1c1c;
+    padding-bottom: 1.25rem;
+    color: white;
+    li{
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    h3{
+        background-color: #0282f9;
+        display: inline-block;
+        padding: 1.0625rem 1.875rem;
+        font-size: 1.4rem;
+        position: relative;
+        bottom: 1.6875rem;
+    }
+    .more{
+        text-align: center;
+    }
+    .more-load {
+        text-align: center;
+        border: none;
+        padding: 12px 55px;
+        font-weight: bold;
+        color: inherit;
+        &:hover{
+            cursor: pointer;
+            scale: 1.1;
+        }
+    }
+}
+// --------
+// FOOTER
+
+.footer-top{
+    background-color: #0282f9;
+    color: white;
+    font-size: .8125rem;
+    .shop{
+        max-width: 3.4375rem;
+        margin-right: .9375rem;
+        
+    }
 }
