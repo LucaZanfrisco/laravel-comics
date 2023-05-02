@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Rotta alla Homepage
 Route::get('/', function () {
     // dati passati alla view
     $data = [
@@ -81,6 +82,7 @@ Route::get('/', function () {
     return view('home', $data);
 })->name('Homepage');
 
+// Rotto alla pagina news
 Route::get('/NEWS', function(){
     $data = [
         // Dati nav-bar
@@ -145,3 +147,6 @@ Route::get('/NEWS', function(){
         ];
     return view('news',$data);
 })->name('News');
+
+// Redirezione alla homepage al click su COMICS
+Route::redirect('/COMICS','/',301);
