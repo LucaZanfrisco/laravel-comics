@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('main')
-{{-- Sezione main della pagina di un singolo fumetto --}}
+    {{-- Sezione main della pagina di un singolo fumetto --}}
     <section id="comic">
         {{-- Poster del fumetto --}}
         <div class="poster-section">
@@ -41,10 +41,10 @@
             {{-- Staff e specifiche --}}
             <div id="talent">
                 <div class="container">
-                    <div class="row row-cols-2">
+                    <div class="row row-cols-2 gx-5 ">
                         <div>
                             <h3>Talent</h3>
-                            <div class="row">
+                            <div class="row border-bottom border-dark-subtle py-2">
                                 <div class="col-4">
                                     <div>Art by:</div>
                                 </div>
@@ -54,7 +54,7 @@
                                     @endforeach
                                 </div>
                             </div>
-                            <div class="row mt-4">
+                            <div class="row mt-4 border-bottom border-dark-subtle py-2">
                                 <div class="col-4">
                                     <div>Written by:</div>
                                 </div>
@@ -68,7 +68,7 @@
                         </div>
                         <div>
                             <h3>Specs</h3>
-                            <div class="row">
+                            <div class="row border-bottom border-dark-subtle py-2">
                                 <div class="col-4">
                                     <div>Series:</div>
                                 </div>
@@ -76,7 +76,7 @@
                                     <div class="text-uppercase"><a href="#">{{ $comic_detail['series'] }}</a></div>
                                 </div>
                             </div>
-                            <div class="row my-4">
+                            <div class="row my-4 border-bottom border-dark-subtle py-2">
                                 <div class="col-4">
                                     <div>U.S Price:</div>
                                 </div>
@@ -84,7 +84,7 @@
                                     <div>{{ $comic_detail['price'] }}</div>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row border-bottom border-dark-subtle py-2">
                                 <div class="col-4">
                                     <div>On Sale Date:</div>
                                 </div>
@@ -95,6 +95,34 @@
                         </div>
                     </div>
                 </div>
+                {{-- Celle del merch --}}
+                <div class="box">
+                    <div class="container">
+                        <div class="row row-cols-4 justify-content-between align-items-center">
+                            <div class="row row-cols-2 justify-content-between box-link">
+                                <div>DIGITAL COMICS</div>
+                                <img src="{{ Vite::asset('resources/img/buy-comics-digital-comics.png') }}"
+                                    alt="digital-comics" class="img-fluid link">
+                            </div>
+                            <div class="row row-cols-2 justify-content-between box-link">
+                                <div>SHOP DC</div>
+                                <img src="{{ Vite::asset('resources/img/buy-comics-subscriptions.png') }}" alt="shop-dc"
+                                    class="img-fluid link">
+                            </div>
+                            <div class="row row-cols-2 justify-content-between box-link">
+                                <div>COMIC SHOP LOCATOR</div>
+                                <img src="{{ Vite::asset('resources/img/buy-comics-shop-locator.png') }}"
+                                    alt="shop-locator" class="img-fluid link">
+                            </div>
+                            <div class="row row-cols-2 justify-content-between box-link">
+                                <div>SUBSCRIPTIONS</div>
+                                <img src="{{ Vite::asset('resources/img/buy-comics-merchandise.png') }}"
+                                    alt="subscriptions" class="img-fluid link">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- /cell del merch --}}
             </div>
             {{-- /Staff e Specifiche --}}
         </div>

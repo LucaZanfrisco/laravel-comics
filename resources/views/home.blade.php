@@ -5,7 +5,7 @@
 @endsection
 
 @section('main')
-{{-- Main della pagina generale dei fumetti --}}
+    {{-- Main della pagina generale dei fumetti --}}
     <main>
         <section id="comic-main">
             <div class="container">
@@ -29,5 +29,20 @@
                 <button class="more-load btn btn-primary" type="button">LOAD MORE</button>
             </div>
         </section>
+        {{-- sezione merch del main --}}
+        <div class="main-bot">
+            <div class="container">
+                {{-- lista del merch --}}
+                <ul class="row row-cols-5 align-items-center list-unstyled justify-content-between py-5 m-0">
+                    {{-- ciclo che mostra la lista dei merch --}}
+                    @foreach ($footerTop as $item)
+                        <li>
+                            <img src="{{ Vite::asset($item['image']) }}" alt="{{ $item['image'] }}" class="shop">
+                            <span> {{ $item['name'] }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
     </main>
 @endsection

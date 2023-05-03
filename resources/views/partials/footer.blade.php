@@ -1,19 +1,5 @@
 <footer>
-    {{-- sezione superiore del footer --}}
-    <div class="footer-top">
-        <div class="container">
-            {{-- lista del merch --}}
-            <ul class="row row-cols-5 align-items-center list-unstyled justify-content-between py-5 m-0">
-                {{-- ciclo che mostra la lista dei merch --}}
-            @foreach ($footerTop as $item)
-                <li>
-                    <img src="{{ Vite::asset($item['image']) }}" alt="{{ $item['image'] }}" class="shop">
-                    <span> {{ $item['name'] }}</span>
-                </li>
-            @endforeach  
-        </ul>
-        </div>  
-    </div>
+    
     {{-- sezione superiore del footer --}}
     {{-- sezione centrale del footer --}}
     <div class="footer-mid">

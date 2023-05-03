@@ -39,7 +39,7 @@
     // Sezione dello Staff e delle Specifiche
     #talent{
         background-color: #f6f6f6;
-        padding: 1.25rem 0;
+        padding-top: 1.875rem;
         h3{
             padding-bottom: 1.25rem;
             border-bottom: 1px solid lightgray;
@@ -47,6 +47,24 @@
         a{
             color: #0282f9;
         }
+    }
+    // Sezione del merch
+    .box{
+        border-top: 1px solid lightgray;
+        margin-top: 6.25rem;
+    }
+    .box-link{
+        border: 1px solid lightgray;
+        border-bottom: none;
+        height: 4.375rem;
+        padding-top: .625rem;
+        margin: 0;
+    }
+    .link{
+        display: block;
+        filter: invert(1);
+        width: 70px;
+        height: 40px;
     }
 }
 // --------
