@@ -1,17 +1,22 @@
 @extends('layouts.app')
 
 @section('main')
+{{-- Sezione main della pagina di un singolo fumetto --}}
     <section id="comic">
+        {{-- Poster del fumetto --}}
         <div class="poster-section">
             <div class="container">
                 <img src="{{ $comic_detail['thumb'] }}" alt="{{ $comic_detail['title'] }}" class="poster">
             </div>
         </div>
+        {{-- sezione delle informazoni del fumetto --}}
         <div class="info-section">
             <div class="container p-0">
                 <div class="row row-cols-2 gs-0">
                     <div>
+                        {{-- Nome --}}
                         <h2>{{ $comic_detail['title'] }}</h2>
+                        {{-- Disponibilta e prezzo --}}
                         <div class="row price gx-0 my-3">
                             <div class="col-8 d-flex align-items-center justify-content-between available">
                                 <div>{{ $comic_detail['price'] }}</div>
@@ -21,16 +26,19 @@
                                 Check Availability &triangledown;
                             </div>
                         </div>
+                        {{-- Descrizione --}}
                         <div>
                             <p class="fs-6">{{ $comic_detail['description'] }} </p>
                         </div>
                     </div>
+                    {{-- Colonna della pubblicita --}}
                     <div class="adv">
                         <div>ADVERTISEMENT</div>
                         <img src="{{ Vite::asset('resources/img/adv.jpg') }}" alt="adv" class="img-fluid">
                     </div>
                 </div>
             </div>
+            {{-- Staff e specifiche --}}
             <div id="talent">
                 <div class="container">
                     <div class="row row-cols-2">
@@ -88,6 +96,8 @@
                     </div>
                 </div>
             </div>
+            {{-- /Staff e Specifiche --}}
         </div>
+        {{-- /sezione delle info del fumetto --}}
     </section>
 @endsection

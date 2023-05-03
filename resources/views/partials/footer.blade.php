@@ -1,7 +1,10 @@
 <footer>
+    {{-- sezione superiore del footer --}}
     <div class="footer-top">
         <div class="container">
+            {{-- lista del merch --}}
             <ul class="row row-cols-5 align-items-center list-unstyled justify-content-between py-5 m-0">
+                {{-- ciclo che mostra la lista dei merch --}}
             @foreach ($footerTop as $item)
                 <li>
                     <img src="{{ Vite::asset($item['image']) }}" alt="{{ $item['image'] }}" class="shop">
@@ -11,6 +14,8 @@
         </ul>
         </div>  
     </div>
+    {{-- sezione superiore del footer --}}
+    {{-- sezione centrale del footer --}}
     <div class="footer-mid">
         <div class="container-jumbo container overflow-hidden">
             <div class="container-info">
@@ -63,15 +68,21 @@
             </div>
         </div>
     </div>
+    {{-- /sezione centrale del footer --}}
+    {{-- sezione inferiore del footer --}}
     <div class="footer-bot d-flex align-items-center">
         <div class="container">
+            {{-- riga --}}
             <div class="row row-cols-2 justify-content-between align-items-center">
+                {{-- colonna con il pulsante iscriviti --}}
                 <div>
                     <button>SIGN-UP NOW</button>
                 </div>
+                {{-- lista dei social --}}
                 <div>
                     <ul class="d-flex list-unstyled justify-content-end align-items-center">
                         <li class="follow">FOLLOW US</li>
+                        {{-- ciclo che mostra la lista dei social --}}
                         @foreach ($social as $item)
                             <li>
                                 <img src="{{ vite::asset($item['image']) }}" alt="{{ $item['name'] }}">
@@ -82,4 +93,5 @@
             </div>
         </div>
     </div>
+    {{-- /sezione inferiore del footer --}}
 </footer>

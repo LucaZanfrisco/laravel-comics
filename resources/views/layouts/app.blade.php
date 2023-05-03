@@ -10,12 +10,15 @@
 </head>
 <body>
 
+    {{-- Inclusione dell'Header --}}
     @include('partials.header')
 
+    {{-- Segnaposto della sezione main --}}
     <main>
         @yield('main')
     </main>
 
+    {{-- Inclusione del Footer --}}
     @include('partials.footer')
 </body>
 </html>
