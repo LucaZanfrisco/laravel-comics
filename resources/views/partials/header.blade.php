@@ -7,14 +7,17 @@
             </div>
         </div>
         <nav>
-            <div class="container d-flex align-items-center justify-content-between">
-                <a href="/"><img src="{{ Vite::asset('resources/img/dc-logo.png')}}" alt="logo-dc" class="img-fluid"></a>
-                <ul class="d-flex justify-content-between list-unstyled gap-4">
+            <div class="container">
+                <a href="/"><img src="{{ Vite::asset('resources/img/dc-logo.png')}}" alt="logo-dc" class="img-fluid pt-2 "></a>
+                <ul class="d-flex justify-content-between list-unstyled gap-3">
                     @foreach ($nav as $item)
-                        <li><a href="/{{ $item }}">{{ $item }}</a></li>
+                    <li class="{{ Str::startsWith( Route::currentRouteName() , $item) ? 'active' : ''}}"><a href="/{{ $item }}">{{ $item }}</a></li>
+                        @if($loop->last)
+                        <li class="{{ Str::startsWith( Route::currentRouteName() , $item) ? 'active' : ''}}"><a href="/{{ $item }}">{{ $item }}</a> &bigtriangledown; </li>
+                        @endif
                     @endforeach
                 </ul>
-                <div>
+                <div class="d-flex align-items-center">
                     <input type="text" placeholder="Search" class="search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </div>

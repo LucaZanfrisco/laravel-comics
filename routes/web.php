@@ -80,7 +80,7 @@ Route::get('/', function () {
         ]
         ];
     return view('home', $data);
-})->name('Homepage');
+})->name('COMICS');
 
 // Rotto alla pagina news
 Route::get('/NEWS', function(){
@@ -146,7 +146,7 @@ Route::get('/NEWS', function(){
         ]
         ];
     return view('news',$data);
-})->name('News');
+})->name('NEWS');
 
 // Redirezione alla homepage al click su COMICS
 Route::redirect('/COMICS','/',301);
