@@ -2,11 +2,18 @@
 
 // HOMEPAGE
 main{
-    background-color: #1c1c1c;
-    padding-bottom: 1.25rem;
-    color: white;
-    li{
-        &:hover{
+    #comic-main{
+        background-color: #1c1c1c;
+        padding-bottom: 1.25rem;
+        color: white;
+        li{
+            a{
+                color: inherit;
+                &:hover{
+                    color: #0282f9;
+                }
+            }
+            &:hover{
             cursor: pointer;
         }
     }
@@ -32,11 +39,14 @@ main{
             scale: 1.1;
         }
     }
+    }
 }
 // --------
 
 // NEWS 
-.news{
+#news{
+    background-color: #1c1c1c;
+    color: white;
     .news-title{
         background-color: #0282f9;
         border-radius: .3125rem;

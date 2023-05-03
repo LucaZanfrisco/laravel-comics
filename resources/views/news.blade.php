@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('main')
-    <div class="container news">
-        <ul class="row row-cols-3 py-4 list-unstyled">
+<section id="news">
+     <div class="container">
+        <ul class="row row-cols-3 py-4 list-unstyled m-0">
             <li>
                 <h3 class="news-title">NEWS 1</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quibusdam veritatis ullam a earum itaque molestiae voluptates! Alias error vero earum quasi, explicabo architecto sint dolorem neque quidem amet provident.</p>
@@ -26,4 +27,6 @@
 
         </ul>
     </div>
+</section>
+   
 @endsection

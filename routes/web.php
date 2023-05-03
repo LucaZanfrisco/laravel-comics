@@ -16,137 +16,39 @@ use Illuminate\Support\Facades\Route;
 // Rotta alla Homepage
 Route::get('/', function () {
     // dati passati alla view
-    $data = [
-        // Dati nav-bar
-        'nav' => [
-            'CHARACTERS',
-            'COMICS',
-            'MOVIES',
-            'TV',
-            'GAMES',
-            'COLLECTIBLES',
-            'VIDEOS',
-            'FANS',
-            'NEWS',
-            'SHOP'
-        ],
-        // Dati riguardanti i fumetti
-        'comics' => config('db'),
-        // Dati della nav del footer top
-        'footerTop' => [
-                [
-                    'image' => 'resources/img/buy-comics-digital-comics.png',
-                    'name' => 'DIGITAL COMICS'  
-                ],
-                [
-                    'image' => 'resources/img//buy-comics-merchandise.png',
-                    'name' => 'DC MERCHANDISE' 
-                ],
-                [
-                    'image' => 'resources/img/buy-comics-subscriptions.png',
-                    'name' => 'SUBSCRIPTION'  
-                ],
-                [
-                    'image' => 'resources/img/buy-comics-shop-locator.png',
-                    'name' => 'COMIC SHOP LOCATOR'
-                ],
-                [
-                    'image' => 'resources/img/buy-dc-power-visa.svg',
-                    'name' =>  'DC POWER VISA' 
-                ]
-            ],
-        // Dati dei social
-        'social' => [
-            [
-                'image' => 'resources/img/footer-facebook.png',
-                'name' => 'facebook'  
-            ],
-            [
-                'image' => 'resources/img/footer-twitter.png',
-                'name' => 'twitter'  
-            ],
-            [
-                'image' => 'resources/img/footer-youtube.png',
-                'name' => 'youtube'  
-            ],
-            [
-                'image' => 'resources/img/footer-pinterest.png',
-                'name' => 'pinterest'  
-            ],
-            [
-                'image' => 'resources/img/footer-periscope.png',
-                'name' => 'periscope'  
-            ],
-        ]
-        ];
-    return view('home', $data);
+    
+    $comics = config('db.comics');
+    $nav = config('db.nav');
+    $footerTop = config('db.footerTop');
+    $social = config('db.social');
+
+    return view('home', compact('comics','nav','footerTop','social'));
 })->name('COMICS');
 
-// Rotto alla pagina news
+// Rotta alla pagina news
 Route::get('/NEWS', function(){
-    $data = [
-        // Dati nav-bar
-        'nav' => [
-            'CHARACTERS',
-            'COMICS',
-            'MOVIES',
-            'TV',
-            'GAMES',
-            'COLLECTIBLES',
-            'VIDEOS',
-            'FANS',
-            'NEWS',
-            'SHOP'
-        ],
-        // Dati della nav del footer top
-        'footerTop' => [
-                [
-                    'image' => 'resources/img/buy-comics-digital-comics.png',
-                    'name' => 'DIGITAL COMICS'  
-                ],
-                [
-                    'image' => 'resources/img//buy-comics-merchandise.png',
-                    'name' => 'DC MERCHANDISE' 
-                ],
-                [
-                    'image' => 'resources/img/buy-comics-subscriptions.png',
-                    'name' => 'SUBSCRIPTION'  
-                ],
-                [
-                    'image' => 'resources/img/buy-comics-shop-locator.png',
-                    'name' => 'COMIC SHOP LOCATOR'
-                ],
-                [
-                    'image' => 'resources/img/buy-dc-power-visa.svg',
-                    'name' =>  'DC POWER VISA' 
-                ]
-            ],
-        // Dati dei social
-        'social' => [
-            [
-                'image' => 'resources/img/footer-facebook.png',
-                'name' => 'facebook'  
-            ],
-            [
-                'image' => 'resources/img/footer-twitter.png',
-                'name' => 'twitter'  
-            ],
-            [
-                'image' => 'resources/img/footer-youtube.png',
-                'name' => 'youtube'  
-            ],
-            [
-                'image' => 'resources/img/footer-pinterest.png',
-                'name' => 'pinterest'  
-            ],
-            [
-                'image' => 'resources/img/footer-periscope.png',
-                'name' => 'periscope'  
-            ],
-        ]
-        ];
-    return view('news',$data);
+    $comics = config('db.comics');
+    $nav = config('db.nav');
+    $footerTop = config('db.footerTop');
+    $social = config('db.social');
+
+    return view('news',compact('comics','nav','footerTop','social'));
 })->name('NEWS');
 
 // Redirezione alla homepage al click su COMICS
-Route::redirect('/COMICS','/',301);
+Route::redirect('COMICS','/',301);
+
+Route::get('comic/{index}', function($index){
+
+    $comics = config('db.comics');
+    $nav = config('db.nav');
+    $footerTop = config('db.footerTop');
+    $social = config('db.social');
+
+    if($index > count($comics) - 1){
+        abort(400);
+    }
+
+    $comic_detail = $comics[$index];
+    return view('comics', compact('comic_detail','nav','footerTop','social'));
+})->name('COMICS')->where('index', '[0-9]+');
